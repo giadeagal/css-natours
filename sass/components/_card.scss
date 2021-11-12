@@ -169,6 +169,7 @@
         transform: translate(-50%, -50%);
         width: 90%;
         text-align: center;
+        backface-visibility: hidden;
     }
 
     &__price-box {
