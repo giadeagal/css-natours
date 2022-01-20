@@ -41,7 +41,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 15;
+        z-index: -5;
         transition: all .8s;
     }
 
@@ -99,6 +99,7 @@
     &__checkbox:checked ~ &__nav {
         width: 100%;
         opacity: 1;
+        z-index: 15;
     }
 
     //ICON
@@ -130,7 +131,17 @@
     &__button:hover &__icon::before { top: -1rem; }
     &__button:hover &__icon::after { top: 1rem; }
 
-    &__checkbox:checked + &__button &__icon {
+    &__checkbox:checked ~ &__button &__icon {
         background-color: transparent;
+    }
+
+    &__checkbox:checked ~ &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked ~ &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
