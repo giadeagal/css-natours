@@ -3,10 +3,19 @@
     margin: 0 auto;
 
     &:not(:last-child){
-        margin-bottom: $gutter-vertical;    
+        margin-bottom: $gutter-vertical; 
+        
+        @include respond(S) {
+            margin-bottom: $gutter-vertical-small;
+        }
     }
 
     @include clearfix;
+
+    @include respond(S) {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
 
     [class^="col-"] {
 
@@ -14,7 +23,17 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(S) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
         }
+
+        @include respond(S) {
+            width: 100% !important;
+        }
+
     }
 
     .col-1-of-2 {

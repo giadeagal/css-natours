@@ -27,4 +27,9 @@ html {
 
 body {
   box-sizing: border-box; /* part of the global reset*/
+  padding: 3rem;
+
+  @include respond(S) {
+    padding: 0;
+  }
 }
