@@ -1,15 +1,30 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-    font-size: 62.5%; /*Useful for converting px into rem (it will be = 10px in most browsers)*/
+  font-size: 62.5%; /*Useful for converting px into rem (10px/16px = 62.5% -> 1rem = 10px)*/
+
+  //Larger max-width media queries before max-width smaller ones, then min-width queries in descending order (desktop first approach)
+  // max width:
+  @include respond(M) { // max-width < 1200 ?
+    font-size: 56.25%; // 1rem = 12px -> 12/16 = 75%
+  }
+
+  @include respond(S) { // max-width < 900 ?
+    font-size: 50%; // 1rem = 8px -> 8/16 = 50%
+  }
+
+  // min width: 
+  @include respond(XL) {
+    font-size: 75%; // 1rem = 9px -> 9/16 = 56.25%
+  }
 }
 
 body {
-    box-sizing: border-box; /* part of the global reset*/
+  box-sizing: border-box; /* part of the global reset*/
 }

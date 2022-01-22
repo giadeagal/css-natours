@@ -12,3 +12,37 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+
+// MEDIA QUERIES MANAGER
+/*
+0 - 600px -> XS (Phone) 
+600 - 900px -> S (Portrait Tablet)
+900 - 1200px -> M Landscape Tablet
+[1200 - 1800 px] -> L (Desktops)   <- Standard code applies here
+1800px + -> XL (Larger Desktops)
+
+(because media queries don't affect rem values, em values are needed)
+breakpoint px to em conversion:
+
+- 600px = 37.5em
+- 900px = 56.25em
+- 1200px = 75em
+- 1800px = 112.5em
+
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == XS {
+        @media (max-width: 37.5em) { @content }
+    }
+    @if $breakpoint == S {
+        @media (max-width: 56.25em) { @content }
+    }
+    @if $breakpoint == M {
+        @media (max-width: 75em) { @content }
+    }
+    @if $breakpoint == XL {
+        @media (min-width: 112.5em) { @content }
+    }
+}
