@@ -11,6 +11,10 @@
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(S) {
+            margin-bottom: 6rem;
+        }
     }
 
     &__logo {
@@ -71,7 +75,6 @@
         @include respond(S) {
             width: 100%;
             text-align: center;
-            float: none;
         }
     }
 }
