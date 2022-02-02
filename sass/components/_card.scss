@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -164,6 +165,7 @@
     @include absoluteCenter;
     width: 90%;
     text-align: center;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
 
@@ -183,7 +185,7 @@
     font-weight: 100;
   }
 
-  @include respond(S) {
+  @media only screen and (max-width: 56.25em), only screen  and (hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;

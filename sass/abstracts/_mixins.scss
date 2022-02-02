@@ -34,15 +34,21 @@ breakpoint px to em conversion:
 */
 @mixin respond($breakpoint) {
     @if $breakpoint == XS {
-        @media (max-width: 37.5em) { @content }
-    }
+        @media only screen and (max-width: 37.5em) { @content }
+    };
     @if $breakpoint == S {
-        @media (max-width: 56.25em) { @content }
-    }
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+    };
     @if $breakpoint == M {
-        @media (max-width: 75em) { @content }
-    }
+       @media only screen and (max-width: 75em) {
+           @content
+       }
+    };
     @if $breakpoint == XL {
-        @media (min-width: 112.5em) { @content }
-    }
+        @media only screen and (min-width: 112.5em) {
+            @content
+        }
+    };
 }
